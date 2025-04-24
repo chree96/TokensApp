@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./src/navigator/StackNavigator";
+import { useState } from "react";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 export default function App() {
+  const [resetKey, setResetKey] = useState(0);
+
+  const handleRetry = () => {
+    setResetKey((prev) => prev + 1);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <ErrorBoundary resetKey={resetKey} onRetry={handleRetry}>
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
+      </ErrorBoundary>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
