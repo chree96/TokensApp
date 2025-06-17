@@ -1,6 +1,6 @@
 # TokensApp
 
-TokensApp is a cross-platform mobile application designed to provide real-time cryptocurrency token data through a performant and scalable architecture. The core of the app leverages WebSocket connections and Redux Saga to manage live data streams, ensuring up-to-date token prices and seamless state management. Please note that the app's primary focus is on data flow; the graphical interface is intentionally kept simple.
+TokensApp is a cross-platform mobile application, built with React Native, designed to provide real-time cryptocurrency token data through a performant and scalable architecture. The core of the app leverages WebSocket connections and Redux Saga to manage live data streams, ensuring up-to-date token prices and seamless state management. Please note that the app's primary focus is on data flow; the graphical interface is intentionally kept simple.
 
 ## Key Features
 
